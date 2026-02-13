@@ -12,6 +12,8 @@ A comprehensive collection of FiveM resources designed to enhance gameplay, rang
 
 -   **t3_lockpick**: This resource (included) is a **required dependency** for other scripts in this package to function correctly. It must be present in your resources folder.
 
+-   **interact-sound**: A standalone resource required for playing custom sound effects.
+
 📦 Included Resources
 ---------------------
 
@@ -42,13 +44,21 @@ Resources designed to facilitate criminal roleplay.
 
 2.  **Copy** the folders into your FiveM server's `resources` directory (e.g., `[standalone]` or `[qb]`).
 
-3.  **Database**:
+3.  **Audio Setup (Important)**:
+
+    -   This project relies on `interact-sound` for specific mission audio.
+
+    -   You must verify that the custom audio file named **`josef_call`** is present in your `interact-sound/client/html/sounds` directory.
+
+    -   *If it is not present, copy it from this repository to that folder manually.*
+
+4.  **Database**:
 
     -   Run `npwd/import.sql` to set up the necessary tables for the phone.
 
     -   Run `qb-npwd/patch.sql` if required for specific QBCore database adjustments.
 
-4.  **Server Config**: Add the following lines to your `server.cfg`:
+5.  **Server Config**: Add the following lines to your `server.cfg`:
 
     ```
     # NPWD Configuration
@@ -57,6 +67,7 @@ Resources designed to facilitate criminal roleplay.
     # Dependencies (Must start before the mission)
     ensure oxmysql         #database
     ensure PolyZone        #zones and areas
+    ensure interact-sound  #audio handling
     ensure t3_lockpick     #lockpick minigame
     ensure qb-target       #interactions
 
