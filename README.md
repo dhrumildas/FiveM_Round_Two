@@ -23,7 +23,7 @@ A high-fidelity, React-based phone system with custom extensions.
 
 -   **`qb-npwd`**: The bridge resource connecting `npwd` to the **QBCore** framework, ensuring player data, inventory, and bank accounts sync correctly.
 
--   **`npwd-mission`**: A custom extension/app for NPWD that handles mission distribution and tracking through the phone interface.
+-   **`fivem-chop-shop`**: A custom extension/app for NPWD that handles mission distribution and tracking through the phone interface.
 
 ### 🔓 Illegal Activities & Minigames
 
@@ -42,23 +42,28 @@ Resources designed to facilitate criminal roleplay.
 
 2.  **Copy** the folders into your FiveM server's `resources` directory (e.g., `[standalone]` or `[qb]`).
 
-    -   *Note: Ensure `t3_lockpick` is in your resources folder as it is required by the other scripts.*
-
 3.  **Database**:
 
     -   Run `npwd/import.sql` to set up the necessary tables for the phone.
 
     -   Run `qb-npwd/patch.sql` if required for specific QBCore database adjustments.
 
-4.  **Server Config**: Add the following lines to your `server.cfg`. Ensure `npwd` is started *before* the bridge and mission scripts.
+4.  **Server Config**: Add the following lines to your `server.cfg`:
 
     ```
-    # Note: t3_lockpick does not need to be ensured here, but must be in your resources folder.
+    # NPWD Configuration
+    set npwd:framework qbcore
 
-    # NPWD Phone Ecosystem
-    ensure npwd
+    # Dependencies (Must start before the mission)
+    ensure oxmysql         #database
+    ensure PolyZone        #zones and areas
+    ensure t3_lockpick     #lockpick minigame
+    ensure qb-target       #interactions
+
+    # Main App
     ensure qb-npwd
-    ensure npwd-mission
+    ensure npwd
+    ensure fivem-chop-shop
 
     ```
 
@@ -73,3 +78,9 @@ Manage general phone settings, default apps, and permissions.
 
 Adjust the difficulty, speed, and pin count for the lockpicking minigame.
 
+⚖️ Credits & Licenses
+---------------------
+
+-   **NPWD**: Project Error Team
+
+-   **Lockpick**: T3
