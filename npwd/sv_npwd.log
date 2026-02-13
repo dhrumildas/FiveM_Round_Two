@@ -7682,3 +7682,20 @@
 {"level":"info","message":"Executed query (SELECT id FROM npwd_marketplace_listings WHERE identifier = ? [\"CAF99286\"]) in 25.7425ms'","module":"DBInterface","timestamp":"2026-02-13T07:36:37.645Z"}
 {"level":"info","message":"Executed query (DELETE FROM npwd_marketplace_listings WHERE identifier = ? AND reported = 0 [\"CAF99286\"]) in 1.6736ms'","module":"DBInterface","timestamp":"2026-02-13T07:36:37.647Z"}
 {"level":"info","message":"Unloaded NPWD Player, source: (2)","module":"player","timestamp":"2026-02-13T07:36:37.647Z"}
+{"level":"debug","message":"Marketplace service started","module":"marketplace","timestamp":"2026-02-13T20:02:07.266Z"}
+{"level":"debug","message":"Call service started","module":"calls","timestamp":"2026-02-13T20:02:07.269Z"}
+{"level":"debug","message":"Player Service started","module":"player","timestamp":"2026-02-13T20:02:07.270Z"}
+{"level":"info","message":"Loading QBCore bridge....","timestamp":"2026-02-13T20:02:07.270Z"}
+{"level":"info","message":"QBCore bridge initialized","timestamp":"2026-02-13T20:02:07.270Z"}
+{"level":"debug","message":"Boot service started","module":"boot","timestamp":"2026-02-13T20:02:07.271Z"}
+{"level":"debug","message":"Messages service started","module":"messages","timestamp":"2026-02-13T20:02:07.271Z"}
+{"level":"debug","message":"Notes service started","module":"notes","timestamp":"2026-02-13T20:02:07.272Z"}
+{"level":"debug","message":"Contacts service started","module":"contact","timestamp":"2026-02-13T20:02:07.272Z"}
+{"level":"debug","message":"Photo service started","module":"photo","timestamp":"2026-02-13T20:02:07.291Z"}
+{"level":"debug","message":"Twitter service started","module":"twitter","timestamp":"2026-02-13T20:02:07.291Z"}
+{"level":"debug","message":"Match service started","module":"match","timestamp":"2026-02-13T20:02:07.292Z"}
+{"level":"debug","message":"Beginning database schema validation","module":"boot","timestamp":"2026-02-13T20:02:11.582Z"}
+{"level":"info","message":"Successfully started","timestamp":"2026-02-13T20:02:11.593Z"}
+{"level":"info","message":"Executed query (SELECT COUNT(*) as count\n                       FROM information_schema.tables\n                       WHERE table_schema = ?\n                         AND table_name = ? [\"QBCore_852919\",\"players\"]) in 231.3053ms'","module":"DBInterface","timestamp":"2026-02-13T20:02:11.814Z"}
+{"level":"info","message":"Executed query (SHOW COLUMNS IN players []) in 57.8889ms'","module":"DBInterface","timestamp":"2026-02-13T20:02:11.872Z"}
+{"level":"debug","message":"Database schema successfully validated","module":"boot","timestamp":"2026-02-13T20:02:11.872Z"}
